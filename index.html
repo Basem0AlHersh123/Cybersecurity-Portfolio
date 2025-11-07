@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basem Al-Hersh | Cybersecurity Specialist & Python Developer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/css/all.min.css" />
+    <link rel="stylesheet" href="style/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Matrix Background -->
+    <canvas id="matrix"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top cyber-border">
+      <div class="container">
+        <a class="navbar-brand" href="#">&lt;BasemAlHersh/&gt;</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about" data-key="nav.about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills" data-key="nav.skills"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects" data-key="nav.projects"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience" data-key="nav.experience"
+                >Experience</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-key="nav.contact"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <div class="language-switcher">
+                <button id="langToggle" class="lang-btn" data-lang="en">
+                  <span class="lang-text">العربية</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-animation">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 hero-content">
+            <h4 class="text-secondary mb-3" data-key="hero.greeting">
+              Hi, my name is
+            </h4>
+            <h1 class="display-2 fw-bold mb-3">Basem Al-Hersh.</h1>
+            <h2
+              class="display-4 fw-bold mb-4 typewriter"
+              data-key="hero.tagline"
+            >
+              I build secure digital solutions.
+            </h2>
+            <p class="lead mb-4" data-key="hero.description">
+              I'm an Information Technology student specializing in
+              cybersecurity and Python development. I create secure, efficient
+              digital solutions and have built 60+ projects focusing on ethical
+              hacking principles.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#projects" class="cyber-btn" data-key="hero.viewWork"
+                >View My Work</a
+              >
+              <a href="#contact" class="cyber-btn" data-key="hero.getInTouch">
+                Get In Touch
+              </a>
+              <a
+                href="assets/CV.zip"
+                class="btn btn-secondary"
+                download
+                data-ar="تحميل السيرة الذاتية"
+                data-en="Download CV"
+              >
+                تحميل السيرة الذاتية
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center mt-5 mt-lg-0">
+            <div class="position-relative">
+              <div
+                class="bg-dark rounded-circle d-inline-block p-4 border border-secondary"
+              >
+                <i class="bi bi-shield-lock display-1 text-secondary"></i>
+              </div>
+              <div class="mt-4">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Cybersecurity</div>
+                <div class="skill-tag">Ethical Hacking</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 dark-section">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 col-6 counter-item">
+            <div class="counter" data-count="60">0</div>
+            <p data-key="stats.projects">Projects Completed</p>
+          </div>
+          <div class="col-md-3 col-6 counter-item">
+            <div class="counter" data-count="2">0</div>
+            <p data-key="stats.experience">Years Experience</p>
+          </div>
+          <div class="col-md-3 col-6 counter-item">
+            <div class="counter" data-count="10">0</div>
+            <p data-key="stats.certifications">Certifications</p>
+          </div>
+          <div class="col-md-3 col-6 counter-item">
+            <div class="counter" data-count="2">0</div>
+            <p data-key="stats.languages">Languages</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="section-title" data-key="about.title">About Me</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="mb-4" data-key="about.description1">
+              I am a sophomore Information Technology student at Sana'a
+              University with a strong passion for cybersecurity and Python
+              development. I have built over 60 personal projects and
+              continuously expand my knowledge in ethical hacking and software
+              development.
+            </p>
+            <p class="mb-4" data-key="about.description2">
+              I run a Telegram channel where I share content about cybersecurity
+              and programming, demonstrating my commitment to both learning and
+              contributing to the tech community.
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-geo-alt-fill text-secondary me-2"></i>
+                    <span data-key="about.location">Sana'a, Yemen</span>
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-envelope-fill text-secondary me-2"></i>
+                    alhrshbasm4@gmail.com
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-telephone-fill text-secondary me-2"></i>
+                    +967773022084
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-whatsapp text-secondary me-2"></i>
+                    +967775882014
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-telegram text-secondary me-2"></i>
+                    @Basem0AlHersh
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-github text-secondary me-2"></i>
+                    github.com/Basem0AlHersh123
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-3" data-key="about.education">Education</h3>
+            <div class="card border-dark bg-dark mb-4">
+              <div class="card-body">
+                <h5 class="card-title text-light" data-key="about.degree">
+                  B.Sc. in Information Technology
+                </h5>
+                <h6 class="card-subtitle mb-2 text-secondary">
+                  Sana'a University
+                </h6>
+                <p class="card-text" data-key="about.year">Sophomore Year</p>
+              </div>
+            </div>
+
+            <h3 class="mb-3" data-key="about.certifications">Certifications</h3>
+            <div class="cert-badge">
+              CONA – General Telecommunications Institute
+            </div>
+            <div class="cert-badge">
+              CompTIA A+ Core 1 & Core 2 – Udemy (In Progress)
+            </div>
+            <div class="cert-badge">Dark Web Fundamentals – Udemy</div>
+            <div class="cert-badge">
+              Python & HTML – OctuCode by Ibrahim Adel
+            </div>
+            <div class="cert-badge">
+              Python Ransomware Course – AbdulRahman Tech
+            </div>
+            <div class="cert-badge">TESOL Certification – FLI Institute</div>
+            <div class="cert-badge">ICDL – FLI Institute</div>
+            <div class="cert-badge">ICC – FLI Institute</div>
+            <div class="cert-badge">Computer Architecture & Organization</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 dark-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-key="skills.title">
+          Technical Skills
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-code-slash text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.programming">Programming</h4>
+              </div>
+              <p class="mb-0">
+                Python (Proficient), C++, HTML, CSS, JavaScript, PHP, SQL Server
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">HTML/CSS</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">PHP</div>
+                <div class="skill-tag">SQL Server</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-shield-check text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.cybersecurity">
+                  Cybersecurity
+                </h4>
+              </div>
+              <p class="mb-0">
+                Wazuh, PowerShell Firewall Scripting, Bash Scripting, CLI Tools,
+                Shodan Intelligence Platform
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">Wazuh</div>
+                <div class="skill-tag">PowerShell</div>
+                <div class="skill-tag">Bash</div>
+                <div class="skill-tag">CLI</div>
+                <div class="skill-tag">Shodan</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-laptop text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.os">Operating Systems</h4>
+              </div>
+              <p class="mb-0">
+                Windows (7/10/11), Linux (Ubuntu, Kali, Zorin), WSL2
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">Windows</div>
+                <div class="skill-tag">Linux</div>
+                <div class="skill-tag">Kali</div>
+                <div class="skill-tag">WSL2</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-boxes text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.python">Python Libraries</h4>
+              </div>
+              <p class="mb-0">
+                os, csv, turtle, crypto, pandas, random, requests,
+                BeautifulSoup, zip_longest
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">Pandas</div>
+                <div class="skill-tag">Requests</div>
+                <div class="skill-tag">BeautifulSoup</div>
+                <div class="skill-tag">Crypto</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-translate text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.languages">Languages</h4>
+              </div>
+              <p class="mb-0">
+                English (Fluent - TESOL Certified), Arabic (Native)
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">English</div>
+                <div class="skill-tag">Arabic</div>
+                <div class="skill-tag">TESOL</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="skill-card">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-people text-secondary fs-2 me-3"></i>
+                <h4 class="mb-0" data-key="skills.soft">Soft Skills</h4>
+              </div>
+              <p class="mb-0">
+                Strong communication, teamwork, fast learner, detail-oriented,
+                problem-solving
+              </p>
+              <div class="mt-3">
+                <div class="skill-tag">Communication</div>
+                <div class="skill-tag">Teamwork</div>
+                <div class="skill-tag">Problem-solving</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-key="projects.title">
+          Featured Projects
+        </h2>
+
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-cart-check"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">ZenithBazaar Web Application</h4>
+                <p class="card-text" data-key="projects.zenith">
+                  Developed an e-commerce platform using Flask with user
+                  authentication, product management, and marketplace system.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Flask</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Authentication</span>
+                  <span class="skill-tag">E-commerce</span>
+                </div>
+                <a
+                  href="https://github.com/Basem0AIHersh123/ZenithBazaar"
+                  class="cyber-btn"
+                  data-key="projects.viewGitHub"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-hospital"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Hospital Management System</h4>
+                <p class="card-text" data-key="projects.hospital">
+                  Built a complete desktop application with Tkinter featuring
+                  login/registration, admin dashboard, doctor dashboard, and
+                  patient dashboard.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Tkinter</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Desktop App</span>
+                  <span class="skill-tag">Management System</span>
+                </div>
+                <a
+                  href="https://github.com/Basem0AlHersh123/Python-Hospital-Management-System-Tkinter-Dashboard-"
+                  class="cyber-btn"
+                  data-key="projects.viewGitHub"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-shield-lock"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Firewall CLI Tool</h4>
+                <p class="card-text" data-key="projects.firewall">
+                  Command-line tool that detects suspicious IPs and blocks them
+                  via Windows Firewall.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">CLI</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Security</span>
+                  <span class="skill-tag">Firewall</span>
+                </div>
+                <a
+                  href="https://github.com/Basem0AlHersh123/Malicious-IPs-Blocking"
+                  class="cyber-btn"
+                  data-key="projects.viewGitHub"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-globe"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Web Scraper Tool</h4>
+                <p class="card-text" data-key="projects.scraper">
+                  Scrapes data using requests and BeautifulSoup, then saves the
+                  information to CSV files.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Web Scraping</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">BeautifulSoup</span>
+                  <span class="skill-tag">Data Extraction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🆕 Project 5 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-building"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Gamal Abdel Nasser School Website</h4>
+                <p class="card-text">
+                  Built a responsive school website using HTML, CSS, Bootstrap,
+                  and JavaScript.
+                </p>
+                <a
+                  href="https://github.com/Basem0AlHersh123/gamal-abdel-nasser-school-website"
+                  class="cyber-btn"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 🆕 Project 6 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-shield-shaded"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">The Dark Website</h4>
+                <p class="card-text">
+                  A themed showcase site about military gear and weapons, built
+                  with HTML and CSS.
+                </p>
+                <a
+                  href="https://github.com/Basem0AlHersh123/The-Dark-Website-HTML-CSS-Showcase"
+                  class="cyber-btn"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 🆕 Project 7 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-person-bounding-box"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Avatar Webpage</h4>
+                <p class="card-text">
+                  A creative fan page for Avatar, built with HTML and CSS.
+                </p>
+                <a
+                  href="https://github.com/Basem0AlHersh123/Avatar-website"
+                  class="cyber-btn"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 🆕 Project 8 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img"><i class="bi bi-bag-check"></i></div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Adidas Glass Design</h4>
+                <p class="card-text">
+                  A sleek Adidas-themed landing page using advanced CSS
+                  glassmorphism.
+                </p>
+                <a
+                  href="https://github.com/Basem0AlHersh123/Adidas-Glass-Design"
+                  class="cyber-btn"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 🆕 Project 9 -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-person-workspace"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Ibrahim Al-Hersh Portfolio</h4>
+                <p class="card-text">
+                  Designed and developed a personal portfolio for my uncle using
+                  HTML, CSS, and Bootstrap.
+                </p>
+                <a
+                  href="https://github.com/Basem0AlHersh123/ibrahim-alharish-portfolio"
+                  class="cyber-btn"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- The Dark Website Project -->
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-moon-stars"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">
+                  💀 The Dark Website: A CSS and HTML Showcase 🚀
+                </h4>
+                <p class="card-text">
+                  A multi-page demonstration site featuring dark-themed design,
+                  animations, responsive layout, and hover effects. Showcases
+                  advanced HTML5 & CSS3 styling with keyframes, transitions, and
+                  responsive navigation.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">Animations</span>
+                  <span class="skill-tag">Responsive Design</span>
+                </div>
+                <div class="justify-content-between row">
+                  <div class="col-7">
+                    <a
+                      href="https://github.com/Basem0AlHersh123/The-Dark-Website-HTML-CSS-Showcase"
+                      class="cyber-btn"
+                      >View on GitHub</a
+                    >
+                  </div>
+                  <div class="col-5">
+                    <a
+                      href="https://basem0alhersh123.github.io/The-Dark-Website-HTML-CSS-Showcase/"
+                      class="cyber-btn ms-2"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer text below the grid -->
+        <div class="text-center mt-5">
+          <p class="lead" data-key="projects.mini">
+            I have completed 60+ mini projects with Python, HTML, and CSS.
+            Samples available upon request.
+          </p>
+          <a href="#" class="cyber-btn" data-key="projects.viewAll"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-key="projects.title">
+          Featured Projects
+        </h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-cart-check"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">ZenithBazaar Web Application</h4>
+                <p class="card-text" data-key="projects.zenith">
+                  Developed an e-commerce platform using Flask with user
+                  authentication, product management, and marketplace system.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Flask</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Authentication</span>
+                  <span class="skill-tag">E-commerce</span>
+                </div>
+                <a
+                  href="https://github.com/Basem0AIHersh123/ZenithBazaar"
+                  class="cyber-btn"
+                  data-key="projects.viewGitHub"
+                  >View on GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-hospital"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Hospital Management System</h4>
+                <p class="card-text" data-key="projects.hospital">
+                  Built a complete desktop application with Tkinter featuring
+                  login/registration, admin dashboard, doctor dashboard, and
+                  patient dashboard.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Tkinter</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Desktop App</span>
+                  <span class="skill-tag">Management System</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Firewall CLI Tool</h4>
+                <p class="card-text" data-key="projects.firewall">
+                  Command-line tool that detects suspicious IPs and blocks them
+                  via Windows Firewall.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">CLI</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Security</span>
+                  <span class="skill-tag">Firewall</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="project-card">
+              <div class="project-img">
+                <i class="bi bi-globe"></i>
+              </div>
+              <div class="card-body p-4">
+                <h4 class="card-title">Web Scraper Tool</h4>
+                <p class="card-text" data-key="projects.scraper">
+                  Scrapes data using requests and BeautifulSoup, then saves the
+                  information to CSV files.
+                </p>
+                <div class="mb-3">
+                  <span class="skill-tag">Web Scraping</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">BeautifulSoup</span>
+                  <span class="skill-tag">Data Extraction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <p class="lead" data-key="projects.mini">
+            I have completed 60+ mini projects with Python, HTML, and CSS.
+            Samples available upon request.
+          </p>
+          <a href="#" class="cyber-btn" data-key="projects.viewAll"
+            >View All Projects</a
+          >
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="bi bi-building"></i></div>
+          <div class="card-body p-4">
+            <h4 class="card-title">Gamal Abdel Nasser School Website</h4>
+            <p class="card-text">
+              Built a responsive school website using HTML, CSS, Bootstrap, and
+              JavaScript.
+            </p>
+            <a
+              href="https://github.com/Basem0AlHersh123/gamal-abdel-nasser-school-website"
+              class="cyber-btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="bi bi-shield-shaded"></i></div>
+          <div class="card-body p-4">
+            <h4 class="card-title">The Dark Website</h4>
+            <p class="card-text">
+              A themed showcase site about military gear and weapons, built with
+              HTML and CSS.
+            </p>
+            <a
+              href="https://github.com/Basem0AlHersh123/The-Dark-Website-HTML-CSS-Showcase"
+              class="cyber-btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <i class="bi bi-person-bounding-box"></i>
+          </div>
+          <div class="card-body p-4">
+            <h4 class="card-title">Avatar Webpage</h4>
+            <p class="card-text">
+              A creative fan page for Avatar, built with HTML and CSS.
+            </p>
+            <a
+              href="https://github.com/Basem0AlHersh123/Avatar-website"
+              class="cyber-btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="bi bi-bag-check"></i></div>
+          <div class="card-body p-4">
+            <h4 class="card-title">Adidas Glass Design</h4>
+            <p class="card-text">
+              A sleek Adidas-themed landing page using advanced CSS
+              glassmorphism.
+            </p>
+            <a
+              href="https://github.com/Basem0AlHersh123/Adidas-Glass-Design"
+              class="cyber-btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img"><i class="bi bi-person-workspace"></i></div>
+          <div class="card-body p-4">
+            <h4 class="card-title">Ibrahim Al-Hersh Portfolio</h4>
+            <p class="card-text">
+              Designed and developed a personal portfolio for my uncle using
+              HTML, CSS, and Bootstrap.
+            </p>
+            <a
+              href="https://github.com/Basem0AlHersh123/ibrahim-alharish-portfolio"
+              class="cyber-btn"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 dark-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-key="experience.title">
+          Teaching Experience
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4 data-key="experience.online">Online English Teacher</h4>
+            <p class="text-secondary" data-key="experience.current">Current</p>
+            <p data-key="experience.onlineDesc">
+              Conducted one-on-one and group lessons in English conversation and
+              fluency.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4 data-key="experience.tutor">Programming Tutor</h4>
+            <p class="text-secondary">Sana'a University</p>
+            <p data-key="experience.tutorDesc">
+              Assisted students with C++ programming and English language
+              skills.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4 data-key="experience.teacher">English Teacher</h4>
+            <p class="text-secondary">
+              Technical Industrial Institute (1 year)
+            </p>
+            <p data-key="experience.teacherDesc">
+              Taught English language courses to technical students.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h4 data-key="experience.teacher">English Teacher</h4>
+            <p class="text-secondary">Egra School (1 year)</p>
+            <p data-key="experience.teacherDesc2">
+              Taught English language to school students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" data-key="contact.title">
+          Get In Touch
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-info">
+              <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                  <i class="bi bi-envelope-fill text-secondary fs-1 mb-3"></i>
+                  <h5 data-key="contact.email">Email</h5>
+                  <p>alhrshbasm4@gmail.com</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <i class="bi bi-telephone-fill text-secondary fs-1 mb-3"></i>
+                  <h5 data-key="contact.phone">Phone</h5>
+                  <p>+967773022084</p>
+                  <p data-key="contact.whatsapp">WhatsApp: +967775882014</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <i class="bi bi-telegram text-secondary fs-1 mb-3"></i>
+                  <h5 data-key="contact.telegram">Telegram</h5>
+                  <p>@Basem0AlHersh</p>
+                  <p data-key="contact.channel">
+                    Channel: t.me/Cyber_Sentinel0
+                  </p>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <h5 class="mb-3" data-key="contact.follow">Follow Me</h5>
+                <div class="social-links">
+                  <a href="https://github.com/Basem0AlHersh123" title="GitHub"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                  <a
+                    href="https://t.me/Cyber_Sentinel0"
+                    title="Telegram Channel"
+                    ><i class="bi bi-telegram"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/basem-alhersh-769179397"
+                    title="LinkedIn"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; 2023 Basem Mohammed Ali Al-Hersh. All Rights Reserved.</p>
+        <p data-key="footer.tagline">
+          IT Student | Future Ethical Hacker | Python Developer
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="srcipt.js"></script>
+  </body>
+</html>
