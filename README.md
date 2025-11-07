@@ -72,7 +72,7 @@ Here’s how it looks 👇
 
 ---
 ## View A demo
-[View]([(https://cybersecurity-portfoli.vercel.app/)])
+**View**: [ View ]([(https://cybersecurity-portfoli.vercel.app/)])
 
 ## 💼 Sections Included
 
