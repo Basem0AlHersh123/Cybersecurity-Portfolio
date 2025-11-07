@@ -73,9 +73,6 @@ Here’s how it looks 👇
 ![Preview Screenshot](screenshot.png)
 
 ---
-## View A demo
-**View**: [ View ]([(https://cybersecurity-portfoli.vercel.app/)])
-
 ## 💼 Sections Included
 
 * 🧑‍💻 **About Me** — background, certifications, and contact info
