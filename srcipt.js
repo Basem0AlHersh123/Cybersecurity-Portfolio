@@ -1,311 +1,1033 @@
-// ==========================
-// 🌌 Matrix Background Effect + Language System
-// ==========================
+:root {
+  --primary: #0a192f;
+  --secondary: #64ffda;
+  --accent: #e63946;
+  --light: #ccd6f6;
+  --dark: #112240;
+  --text: #8892b0;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-// Language data
-const translations = {
-  en: {
-    // Navigation
-    "nav.about": "About",
-    "nav.skills": "Skills",
-    "nav.projects": "Projects",
-    "nav.experience": "Experience",
-    "nav.contact": "Contact",
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    // Hero Section
-    "hero.greeting": "Hi, my name is",
-    "hero.tagline": "I build secure digital solutions.",
-    "hero.description":
-      "I'm an Information Technology student specializing in cybersecurity and Python development. I create secure, efficient digital solutions and have built 60+ projects focusing on ethical hacking principles.",
-    "hero.viewWork": "View My Work",
-    "hero.getInTouch": "Get In Touch",
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text);
+  background-color: var(--primary);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    // Stats Section
-    "stats.projects": "Projects Completed",
-    "stats.experience": "Years Experience",
-    "stats.certifications": "Certifications",
-    "stats.languages": "Languages",
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Orbitron", sans-serif;
+  color: var(--light);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 
-    // About Section
-    "about.title": "About Me",
-    "about.description1":
-      "I am a sophomore Information Technology student at Sana'a University with a strong passion for cybersecurity and Python development. I have built over 60 personal projects and continuously expand my knowledge in ethical hacking and software development.",
-    "about.description2":
-      "I run a Telegram channel where I share content about cybersecurity and programming, demonstrating my commitment to both learning and contributing to the tech community.",
-    "about.location": "Sana'a, Yemen",
-    "about.education": "Education",
-    "about.degree": "B.Sc. in Information Technology",
-    "about.year": "Sophomore Year",
-    "about.certifications": "Certifications",
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-    // Skills Section
-    "skills.title": "Technical Skills",
-    "skills.programming": "Programming",
-    "skills.cybersecurity": "Cybersecurity",
-    "skills.os": "Operating Systems",
-    "skills.python": "Python Libraries",
-    "skills.languages": "Languages",
-    "skills.soft": "Soft Skills",
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
 
-    // Projects Section
-    "projects.title": "Featured Projects",
-    "projects.zenith":
-      "Developed an e-commerce platform using Flask with user authentication, product management, and marketplace system.",
-    "projects.hospital":
-      "Built a complete desktop application with Tkinter featuring login/registration, admin dashboard, doctor dashboard, and patient dashboard.",
-    "projects.firewall":
-      "Command-line tool that detects suspicious IPs and blocks them via Windows Firewall.",
-    "projects.scraper":
-      "Scrapes data using requests and BeautifulSoup, then saves the information to CSV files.",
-    "projects.viewGitHub": "View on GitHub",
-    "projects.mini":
-      "I have completed 60+ mini projects with Python, HTML, and CSS. Samples available upon request.",
-    "projects.viewAll": "View All Projects",
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
 
-    // Experience Section
-    "experience.title": "Teaching Experience",
-    "experience.online": "Online English Teacher",
-    "experience.current": "Current",
-    "experience.onlineDesc":
-      "Conducted one-on-one and group lessons in English conversation and fluency.",
-    "experience.tutor": "Programming Tutor",
-    "experience.tutorDesc":
-      "Assisted students with C++ programming and English language skills.",
-    "experience.teacher": "English Teacher",
-    "experience.teacherDesc":
-      "Taught English language courses to technical students.",
-    "experience.teacherDesc2": "Taught English language to school students.",
+::-webkit-scrollbar-thumb:hover {
+  background: #4cd8c0;
+}
 
-    // Contact Section
-    "contact.title": "Get In Touch",
-    "contact.email": "Email",
-    "contact.phone": "Phone",
-    "contact.whatsapp": "WhatsApp: +967775882014",
-    "contact.telegram": "Telegram",
-    "contact.channel": "Channel: t.me/Cyber_Sentinel0",
-    "contact.follow": "Follow Me",
+/* Navigation */
+.cyber-border {
+  position: relative;
+  overflow: hidden;
+}
 
-    // Footer
-    "footer.tagline":
-      "IT Student | Future Ethical Hacker | Python Developer",
-  },
-  ar: {
-    // Navigation
-    "nav.about": "عني",
-    "nav.skills": "المهارات",
-    "nav.projects": "المشاريع",
-    "nav.experience": "الخبرة",
-    "nav.contact": "اتصل بي",
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
 
-    // Hero Section
-    "hero.greeting": "مرحباً، اسمي",
-    "hero.tagline": "أبني حلول رقمية آمنة.",
-    "hero.description":
-      "أنا طالب تكنولوجيا معلومات متخصص في الأمن السيبراني وتطوير بايثون. أصمم حلول رقمية آمنة وفعالة وقمت ببناء أكثر من 60 مشروعاً تركز على مبادئ الاختراق الأخلاقي.",
-    "hero.viewWork": "شاهد أعمالي",
-    "hero.getInTouch": "تواصل معي",
+.navbar {
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  padding: 1rem 0;
+}
 
-    // Stats Section
-    "stats.projects": "مشروع مكتمل",
-    "stats.experience": "سنوات خبرة",
-    "stats.certifications": "شهادة",
-    "stats.languages": "لغة",
+.navbar-brand {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  color: var(--secondary) !important;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
 
-    // About Section
-    "about.title": "عني",
-    "about.description1":
-      "أنا طالب سنة ثانية في تكنولوجيا المعلومات بجامعة صنعاء، شغوف بالأمن السيبراني وتطوير بايثون. قمت ببناء أكثر من 60 مشروعاً شخصياً وأوسع معرفتي باستمرار في الاختراق الأخلاقي وتطوير البرمجيات.",
-    "about.description2":
-      "أدير قناة على التليجرام حيث أشارك محتوى حول الأمن السيبراني والبرمجة، مما يظهر التزامي بالتعلم والمساهمة في المجتمع التقني.",
-    "about.location": "صنعاء، اليمن",
-    "about.education": "التعليم",
-    "about.degree": "بكالوريوس في تكنولوجيا المعلومات",
-    "about.year": "السنة الثانية",
-    "about.certifications": "الشهادات",
+.navbar-brand:hover {
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
 
-    // Skills Section
-    "skills.title": "المهارات التقنية",
-    "skills.programming": "البرمجة",
-    "skills.cybersecurity": "الأمن السيبراني",
-    "skills.os": "أنظمة التشغيل",
-    "skills.python": "مكتبات بايثون",
-    "skills.languages": "اللغات",
-    "skills.soft": "المهارات الشخصية",
+.nav-link {
+  color: var(--light) !important;
+  position: relative;
+  margin: 0 10px;
+  transition: var(--transition);
+  font-weight: 500;
+}
 
-    // Projects Section
-    "projects.title": "أبرز المشاريع",
-    "projects.zenith":
-      "تم تطوير منصة تجارة إلكترونية باستخدام Flask مع نظام مصادقة المستخدم، وإدارة المنتجات، ونظام السوق.",
-    "projects.hospital":
-      "تم بناء تطبيق سطح مكتب كامل باستخدام Tkinter يتضمن تسجيل الدخول/التسجيل، لوحة تحكم المسؤول، لوحة تحكم الطبيب، ولوحة تحكم المريض.",
-    "projects.firewall":
-      "أداة سطر أوامر تكتشف عناوين IP المشبوهة وتحظرها عبر جدار حماية Windows.",
-    "projects.scraper":
-      "يقوم باستخراج البيانات باستخدام requests و BeautifulSoup، ثم يحفظ المعلومات في ملفات CSV.",
-    "projects.viewGitHub": "عرض على GitHub",
-    "projects.mini":
-      "لقد أكملت 60+ مشروعاً صغيراً باستخدام Python و HTML و CSS. العينات متاحة عند الطلب.",
-    "projects.viewAll": "عرض جميع المشاريع",
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s;
+}
 
-    // Experience Section
-    "experience.title": "الخبرة في التدريس",
-    "experience.online": "مدرس لغة إنجليزية عبر الإنترنت",
-    "experience.current": "حالياً",
-    "experience.onlineDesc":
-      "أجريت دروس فردية وجماعية في المحادثة والطلاقة باللغة الإنجليزية.",
-    "experience.tutor": "مدرس برمجة",
-    "experience.tutorDesc":
-      "ساعدت الطلاب في برمجة C++ ومهارات اللغة الإنجليزية.",
-    "experience.teacher": "مدرس لغة إنجليزية",
-    "experience.teacherDesc":
-      "درست دورات اللغة الإنجليزية للطلاب التقنيين.",
-    "experience.teacherDesc2": "درست اللغة الإنجليزية لطلاب المدارس.",
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
 
-    // Contact Section
-    "contact.title": "تواصل معي",
-    "contact.email": "البريد الإلكتروني",
-    "contact.phone": "الهاتف",
-    "contact.whatsapp": "واتساب: 967775882014+",
-    "contact.telegram": "تيليجرام",
-    "contact.channel": "القناة: t.me/Cyber_Sentinel0",
-    "contact.follow": "تابعني",
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
 
-    // Footer
-    "footer.tagline":
-      "طالب تكنولوجيا معلومات | مخترق أخلاقي مستقبلي | مطور بايثون",
-  },
-};
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 80%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(100, 255, 218, 0.08) 0%, transparent 50%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
 
-// ===============
-// Language Switch
-// ===============
-document.addEventListener("DOMContentLoaded", function () {
-  const langToggle = document.getElementById("langToggle");
-  const langText = document.querySelector(".lang-text");
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 
-  let currentLang = localStorage.getItem("language") || "en";
-  updateLanguage(currentLang);
+.hero-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-  langToggle.addEventListener("click", function () {
-    currentLang = currentLang === "en" ? "ar" : "en";
-    updateLanguage(currentLang);
-    localStorage.setItem("language", currentLang);
-  });
+.floating-element {
+  position: absolute;
+  background: rgba(100, 255, 218, 0.03);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 10px;
+  animation: float 6s ease-in-out infinite;
+}
 
-  function updateLanguage(lang) {
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.documentElement.lang = lang;
-    langText.textContent = lang === "en" ? "العربية" : "English";
-    langToggle.setAttribute("data-lang", lang);
+.floating-element:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+}
 
-    document.querySelectorAll("[data-key]").forEach((el) => {
-      const key = el.getAttribute("data-key");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-    // Update bilingual attributes (like CV button)
-const bilingualElements = document.querySelectorAll('[data-ar][data-en]');
-bilingualElements.forEach(el => {
-  el.textContent = el.getAttribute(`data-${lang}`);
-});
+.floating-element:nth-child(2) {
+  width: 70px;
+  height: 70px;
+  top: 70%;
+  left: 85%;
+  animation-delay: 2s;
+}
 
-    const typewriterElement = document.querySelector(".typewriter");
-    if (
-      typewriterElement &&
-      typewriterElement.getAttribute("data-key") === "hero.tagline"
-    ) {
-      typewriterElement.textContent = translations[lang]["hero.tagline"];
-    }
+.floating-element:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  bottom: 10%;
+  left: 15%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
 
-  // ==========================
-  // Matrix Background Animation
-  // ==========================
-  const canvas = document.getElementById("matrix");
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const chars = "01010101010101010101010101010101";
-  const charArray = chars.split("");
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = [];
-
-  for (let x = 0; x < columns; x++) drops[x] = 1;
-
-  function drawMatrix() {
-    ctx.fillStyle = "rgba(10, 25, 47, 0.04)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#64ffda";
-    ctx.font = fontSize + "px Orbitron";
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = charArray[Math.floor(Math.random() * charArray.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
-        drops[i] = 0;
-      drops[i]++;
-    }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
   }
-  setInterval(drawMatrix, 35);
+}
 
-  // ==========================
-  // Navbar Scroll Effect
-  // ==========================
-  window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-      navbar.style.backgroundColor = "rgba(10, 25, 47, 0.98)";
-    } else {
-      navbar.style.backgroundColor = "rgba(10, 25, 47, 0.95)";
-    }
-  });
+/* Buttons */
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  z-index: 1;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
 
-  // ==========================
-  // Counter Animation
-  // ==========================
-  function animateCounter() {
-    const counters = document.querySelectorAll(".counter");
-    const speed = 200;
-    counters.forEach((counter) => {
-      const target = +counter.getAttribute("data-count");
-      const count = +counter.innerText;
-      const increment = target / speed;
-      if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(animateCounter, 1);
-      } else {
-        counter.innerText = target;
-      }
-    });
+.cyber-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.cyber-btn:hover {
+  color: var(--primary);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.cyber-btn:hover::before {
+  left: 0;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid var(--secondary);
+  background: transparent;
+  color: var(--secondary);
+  border-radius: 4px;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Section Titles */
+.section-title {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary);
+  transition: width 0.3s;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+.text-center .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Skills Cards */
+.skill-card {
+  background-color: var(--dark);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--secondary);
+  transform: scaleY(0);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.skill-card:hover::before {
+  transform: scaleY(1);
+}
+
+.skill-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--secondary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.skill-tag:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Projects Cards */
+.project-card {
+  background-color: var(--dark);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.15);
+}
+
+.project-img {
+  height: 160px;
+  background: linear-gradient(135deg, var(--secondary), #4cd8c0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.project-card:hover .project-img::after {
+  left: 100%;
+}
+
+.project-card .card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card .card-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+/* Cert Badges */
+.cert-badge {
+  background-color: var(--dark);
+  border-left: 4px solid var(--secondary);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0 8px 8px 0;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.cert-badge:hover {
+  transform: translateX(5px);
+  background-color: rgba(17, 34, 64, 0.8);
+  border-left-width: 6px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--secondary), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  border: 2px solid var(--dark);
+  box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+  transition: var(--transition);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 5px rgba(100, 255, 218, 0.3);
+}
+
+.timeline-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item p {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Info */
+.contact-info {
+  background-color: var(--dark);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: var(--transition);
+}
+
+.contact-info:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: var(--transition);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.social-links a:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-3px);
+  border-color: var(--secondary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark);
+  color: var(--text);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+/* Counters */
+.counter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  font-family: "Orbitron", sans-serif;
+  line-height: 1;
+}
+
+.counter-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(17, 34, 64, 0.5);
+  border-radius: 12px;
+  transition: var(--transition);
+  border: 1px solid rgba(100, 255, 218, 0.05);
+}
+
+.counter-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(100, 255, 218, 0.2);
+}
+
+.counter-item p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Dark Section */
+.dark-section {
+  background-color: var(--dark);
+}
+
+/* Sections Padding */
+section {
+  padding: 5rem 0;
+}
+
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--secondary);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  display: inline-block;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter();
-        observer.unobserve(entry.target);
-      }
-    });
-  });
+  to {
+    width: 100%;
+  }
+}
 
-  document.querySelectorAll(".counter-item").forEach((item) => {
-    observer.observe(item);
-  });
+@keyframes blink-caret {
 
-  // ==========================
-  // Smooth Scrolling
-  // ==========================
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  });
-});
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--secondary);
+  }
+}
+
+/* Language Switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.lang-btn {
+  background: transparent;
+  color: var(--light);
+  border: 1px solid var(--secondary);
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+
+.lang-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Matrix Canvas */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+}
+
+/* All content above matrix */
+.navbar,
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN - COMPLETE FIXES */
+/* ============================================ */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+  }
+
+  .project-img {
+    height: 140px;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .hero-section {
+    padding: 80px 0 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .display-2 {
+    font-size: 2rem !important;
+  }
+
+  .display-4 {
+    font-size: 1.25rem !important;
+  }
+
+  .typewriter {
+    white-space: normal;
+    border-right: none;
+    display: block;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+  }
+
+  .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .counter {
+    font-size: 2rem;
+  }
+
+  .counter-item {
+    padding: 1rem;
+  }
+
+  .skill-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  .project-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .project-img {
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .cyber-btn,
+  .btn-secondary {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item::before {
+    left: -1rem;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .cert-badge {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .contact-info {
+    padding: 1.5rem;
+  }
+}
+
+/* Small Mobile (below 576px) */
+@media (max-width: 576px) {
+  section {
+    padding: 2rem 0;
+  }
+
+  .hero-section {
+    padding: 60px 0 30px;
+  }
+
+  .display-2 {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-content .lead {
+    font-size: 0.9rem;
+  }
+
+  .counter {
+    font-size: 1.75rem;
+  }
+
+  .counter-item p {
+    font-size: 0.75rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-card p {
+    font-size: 0.8rem;
+  }
+
+  .project-card .card-body {
+    padding: 1rem;
+  }
+
+  .project-card .card-text {
+    font-size: 0.8rem;
+  }
+
+  .cyber-btn,
+  .btn-secondary {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .d-flex.flex-wrap.gap-3 {
+    flex-direction: column;
+  }
+
+  .timeline-item h4 {
+    font-size: 1rem;
+  }
+
+  .cert-badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================ */
+/* RTL (Arabic) SPECIFIC FIXES */
+/* ============================================ */
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .section-title::after {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .text-center .section-title::after {
+  left: 50%;
+  right: auto;
+  transform: translateX(50%);
+}
+
+html[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+html[dir="rtl"] .ms-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .me-2,
+html[dir="rtl"] .me-3 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+html[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+html[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 7px;
+}
+
+html[dir="rtl"] .timeline-item::before {
+  left: auto;
+  right: -2rem;
+}
+
+html[dir="rtl"] .cert-badge {
+  border-left: none;
+  border-right: 4px solid var(--secondary);
+  border-radius: 8px 0 0 8px;
+}
+
+html[dir="rtl"] .cert-badge:hover {
+  transform: translateX(-5px);
+}
+
+html[dir="rtl"] .skill-card::before {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .social-links a {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+/* RTL Mobile Adjustments */
+@media (max-width: 767px) {
+  html[dir="rtl"] .hero-content {
+    text-align: center;
+  }
+
+  html[dir="rtl"] .section-title::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  html[dir="rtl"] .timeline {
+    padding-right: 1rem;
+    padding-left: 0;
+  }
+
+  html[dir="rtl"] .timeline-item::before {
+    right: -1rem;
+    left: auto;
+  }
+}
+
+/* Utility Classes */
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+.border-secondary {
+  border-color: var(--secondary) !important;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Smooth hover effects for all interactive elements */
+a,
+button,
+.project-card,
+.skill-card,
+.cert-badge,
+.social-links a {
+  transition: var(--transition);
+}
+
+/* Fix for Bootstrap button overrides */
+.btn {
+  font-family: "Orbitron", sans-serif;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+}
+
+/* Fix for project card buttons */
+.project-card .row {
+  margin-top: auto;
+}
+
+.project-card .cyber-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Make sure text doesn't overflow on small screens */
+.skill-tag {
+  white-space: normal;
+  word-break: keep-all;
+}
+
+/* Improve readability */
+p,
+li,
+.card-text {
+  line-height: 1.6;
+}
+
+/* Fix for floating elements on mobile */
+@media (max-width: 768px) {
+  .floating-element {
+    display: none;
+  }
+}
+
+/* Fix for counter animation container */
+.counter-item {
+  min-width: 120px;
+}
+
+/* Fix for language button in mobile navbar */
+@media (max-width: 991px) {
+  .language-switcher {
+    margin: 10px 0;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+}
+
+/* Fix for typewriter on RTL */
+html[dir="rtl"] .typewriter {
+  direction: ltr;
+  display: inline-block;
+}
