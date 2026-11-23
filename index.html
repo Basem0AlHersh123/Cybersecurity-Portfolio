@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Basem Mohammed Ali Al-Hersh — Cybersecurity & Application Security Engineer, Ethical Hacker, Python & C# Security Tooling. CompTIA Security+ & CCNA certified."
+    />
+    <title>Basem Al-Hersh | Cybersecurity &amp; AppSec Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Battery-friendly Matrix Background -->
+    <div id="matrix-region" class="matrix-region" aria-hidden="true">
+      <canvas id="matrix"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark cyber-nav" aria-label="Primary">
+        <div class="container">
+          <a class="navbar-brand" href="#home">&lt;BasemSec/&gt;</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#about" data-key="nav.about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#disclosure" data-key="nav.disclosure">AppSec &amp; CVEs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills" data-key="nav.skills">Arsenal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects" data-key="nav.projects">Security Tools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience" data-key="nav.experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" data-key="nav.contact">Contact</a>
+              </li>
+              <li class="nav-item ms-lg-2 d-flex gap-2 align-items-center mt-2 mt-lg-0">
+                <button type="button" id="openCvBtn" class="btn-cyber-sm" data-key="nav.cv">
+                  <i class="bi bi-file-earmark-arrow-down me-1" aria-hidden="true"></i>CV
+                </button>
+                <button type="button" id="langToggle" class="lang-btn" data-lang="en">
+                  <span class="lang-text">العربية</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="container position-relative z-2">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <div class="status-pill mb-4">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span data-key="hero.badge">CompTIA Security+ &amp; CCNA Certified • Available for Security Roles</span>
+              </div>
+              <p class="hero-kicker mb-2 font-mono" data-key="hero.greeting">
+                root@basem-sec:~# whoami
+              </p>
+              <h1 class="hero-title mb-3" data-key="hero.name">
+                Basem Mohammed Ali <span class="text-cyber">Al-Hersh</span>
+              </h1>
+              <h2 class="hero-role mb-4" id="roleRotator" data-key="hero.tagline">
+                Cybersecurity &amp; Application Security Engineer
+              </h2>
+              <p class="hero-desc mb-4" data-key="hero.description">
+                Nearly 4 years building and securing web, mobile, and desktop systems. Certified in CompTIA Security+ and CCNA, experienced in OWASP Top 10 production hardening, authorized vulnerability assessments with responsible CVE disclosure, and AI-powered security tooling in Python &amp; C#.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a href="#projects" class="cyber-btn cyber-btn-primary" data-key="hero.viewWork">
+                  <i class="bi bi-terminal me-2" aria-hidden="true"></i>Explore Security Work
+                </a>
+                <button type="button" id="heroCvBtn" class="cyber-btn" data-key="hero.downloadCV">
+                  <i class="bi bi-download me-2" aria-hidden="true"></i>Download Cyber CV (EN / AR)
+                </button>
+                <a
+                  href="https://basem-alhersh-dev.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cyber-btn cyber-btn-ghost"
+                  data-key="hero.fullstackLink"
+                >
+                  <i class="bi bi-code-slash me-2" aria-hidden="true"></i>Full-Stack Portfolio
+                </a>
+              </div>
+              <div class="d-flex flex-wrap gap-3 hero-socials">
+                <a href="https://github.com/Basem0AlHersh123" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/in/basem-alhersh-769179397" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://t.me/Cyber_Sentinel0" target="_blank" rel="noopener noreferrer" aria-label="Cyber Sentinel Telegram Channel">
+                  <i class="bi bi-telegram" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/967773022084" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +967773022084">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:alhrshbasm4@gmail.com" aria-label="Email">
+                  <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="terminal-card">
+                <div class="terminal-img-wrap">
+                  <img
+                    src="assets/images/cyber-sec.jpg"
+                    alt="Cybersecurity hardware and network architecture"
+                    width="900"
+                    height="600"
+                    fetchpriority="high"
+                    decoding="async"
+                    class="terminal-img"
+                  />
+                  <div class="terminal-img-overlay"></div>
+                  <div class="terminal-img-bar">
+                    <div class="dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <span class="font-mono small text-light">sec-ops@basem.node</span>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <div class="terminal-line mb-2">
+                    <span class="text-cyber font-mono">$</span>
+                    <span class="font-mono" data-key="hero.term1">audit --scope web-apps --owasp top10</span>
+                  </div>
+                  <div class="terminal-line mb-2">
+                    <span class="text-cyber font-mono">$</span>
+                    <span class="font-mono" data-key="hero.term2">wifi-harness --protocols 5 --advisor gemini</span>
+                  </div>
+                  <div class="terminal-line mb-3">
+                    <span class="text-cyber font-mono">$</span>
+                    <span class="font-mono" data-key="hero.term3">track --portswigger 274/labs --status active</span>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="chip-badge">Security+ ✓</span>
+                    <span class="chip-badge">CCNA ✓</span>
+                    <span class="chip-badge">OWASP Top 10</span>
+                    <span class="chip-badge">Python &amp; C#</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Bar -->
+      <section class="stats-bar py-5">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-md-3 counter-item">
+              <div class="stat-card">
+                <div class="counter" data-count="50" data-suffix="+">0</div>
+                <p data-key="stats.projects">Security &amp; Dev Projects</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 counter-item">
+              <div class="stat-card">
+                <div class="counter" data-count="4" data-suffix="+">0</div>
+                <p data-key="stats.experience">Years Building &amp; Securing</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 counter-item">
+              <div class="stat-card">
+                <div class="counter" data-count="274" data-suffix="">0</div>
+                <p data-key="stats.labs">PortSwigger Labs Tracked</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 counter-item">
+              <div class="stat-card">
+                <div class="counter" data-count="14" data-suffix="+">0</div>
+                <p data-key="stats.certifications">Credentials &amp; Programs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About & Credentials -->
+      <section id="about" class="py-5">
+        <div class="container py-3">
+          <div class="section-head text-center mb-5">
+            <h2 class="section-title" data-key="about.title">About &amp; Credentials</h2>
+            <p class="section-subtitle" data-key="about.subtitle">
+              Bridging offensive security mindset with production Full-Stack engineering.
+            </p>
+          </div>
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-6">
+              <div class="glass-card p-4 h-100">
+                <p class="mb-3" data-key="about.description1">
+                  I am an Information Technology specialist at Sana'a University with nearly 4 years of hands-on experience in Application Security, ethical hacking, and building resilient systems in Python, C#, Node.js, and React/Next.js.
+                </p>
+                <p class="mb-4" data-key="about.description2">
+                  I run the <a href="https://t.me/Cyber_Sentinel0" target="_blank" rel="noopener noreferrer" class="text-cyber">t.me/Cyber_Sentinel0</a> Telegram channel sharing cybersecurity insights and secure coding tutorials, and I integrate Docker, Kali Linux, Wazuh SIEM, and AI-assisted defense into my daily workflow.
+                </p>
+                <div class="row g-3 small">
+                  <div class="col-sm-6">
+                    <div class="info-mini">
+                      <i class="bi bi-geo-alt-fill text-cyber" aria-hidden="true"></i>
+                      <span data-key="about.location">Sana'a, Yemen (Remote)</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="info-mini">
+                      <i class="bi bi-telephone-fill text-cyber" aria-hidden="true"></i>
+                      <span dir="ltr">+967 773 022 084</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="info-mini">
+                      <i class="bi bi-envelope-fill text-cyber" aria-hidden="true"></i>
+                      <span>alhrshbasm4@gmail.com</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="info-mini">
+                      <i class="bi bi-translate text-cyber" aria-hidden="true"></i>
+                      <span data-key="about.langVal">Arabic (Native) · English (TESOL)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="glass-card p-4">
+                <h3 class="h5 mb-3 text-cyber" data-key="about.certifications">Verified Certifications &amp; Training</h3>
+                <div class="cert-grid">
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> CompTIA Security+ — Udemy (Completed)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> CCNA — General Telecommunications Institute</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> CompTIA A+ Core 1 &amp; 2 — Udemy (Completed)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> SMIT Full-Stack (81 Topics) — Ref: Mr. Affaq Khan (+92 322 8639720)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Google Project Masar (MENA) — Season 1 &amp; 2 (GCP / ADK)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Cisco HTML, CSS &amp; JS Essentials (Completed)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Docker Containerization — NetworkChuck &amp; SMIT</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Git &amp; GitHub — Alison (CPD 92%) &amp; TESOL (FLI)</div>
+                  <div class="cert-badge done"><i class="bi bi-patch-check-fill" aria-hidden="true"></i> Python Ransomware Research &amp; Dark Web Fundamentals</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AppSec Hardening & Responsible CVE Disclosure -->
+      <section id="disclosure" class="py-5 dark-section">
+        <div class="container py-3">
+          <div class="section-head text-center mb-5">
+            <h2 class="section-title" data-key="disclosure.title">AppSec Hardening &amp; Responsible Disclosure</h2>
+            <p class="section-subtitle" data-key="disclosure.subtitle">
+              Real-world defensive hardening and authorized security testing under strict ethical boundaries.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="glass-card p-4 h-100 border-cyber-left">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="icon-box"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+                  <h3 class="h5 mb-0" data-key="disclosure.hardenTitle">Production Website Hardening</h3>
+                </div>
+                <p class="mb-3" data-key="disclosure.hardenDesc">
+                  Audited and hardened live deployed web applications (React, Next.js, Node.js, and PHP platforms) before and after release — securing authentication flows, role-based access control, HTTP security headers, input sanitization, and XSS/CSRF defenses.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag">OWASP Top 10</span>
+                  <span class="skill-tag">CSP &amp; Headers</span>
+                  <span class="skill-tag">Auth &amp; RBAC</span>
+                  <span class="skill-tag">XSS / CSRF Defense</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="glass-card p-4 h-100 border-cyber-left">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="icon-box"><i class="bi bi-bug-fill" aria-hidden="true"></i></div>
+                  <h3 class="h5 mb-0" data-key="disclosure.cveTitle">Responsible CVE &amp; Vulnerability Disclosure</h3>
+                </div>
+                <p class="mb-3" data-key="disclosure.cveDesc">
+                  Performed authorized black-box and grey-box security assessments across external web applications and responsibly reported verified vulnerabilities and CVEs to site owners and security teams under private scope and non-disclosure agreements.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="skill-tag">Authorized Testing</span>
+                  <span class="skill-tag">Responsible Disclosure</span>
+                  <span class="skill-tag">PoC Reporting</span>
+                  <span class="skill-tag">Private / NDA Scope</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Arsenal -->
+      <section id="skills" class="py-5">
+        <div class="container py-3">
+          <div class="section-head text-center mb-5">
+            <h2 class="section-title" data-key="skills.title">Security &amp; Engineering Arsenal</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-shield-lock text-cyber fs-3" aria-hidden="true"></i>
+                  <h3 class="h5 mb-0" data-key="skills.cybersecurity">Offensive &amp; Defensive Security</h3>
+                </div>
+                <p class="small mb-3" data-key="skills.cyberDesc">
+                  OWASP Top 10 auditing, PortSwigger Academy labs, Wazuh SIEM, Shodan, ARP/ICMP discovery, PowerShell Firewall rules, Kali Linux.
+                </p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="skill-tag">OWASP Top 10</span>
+                  <span class="skill-tag">Wazuh</span>
+                  <span class="skill-tag">Kali Linux</span>
+                  <span class="skill-tag">Shodan</span>
+                  <span class="skill-tag">CCNA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-code-square text-cyber fs-3" aria-hidden="true"></i>
+                  <h3 class="h5 mb-0" data-key="skills.programming">Security Tooling &amp; Code</h3>
+                </div>
+                <p class="small mb-3" data-key="skills.progDesc">
+                  Python (Fernet, Requests, BeautifulSoup, FastAPI, Flask), C# (.NET / WPF / WinForms), TypeScript, JavaScript, Node.js, PHP, C++.
+                </p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">C# / .NET</span>
+                  <span class="skill-tag">PowerShell</span>
+                  <span class="skill-tag">Bash</span>
+                  <span class="skill-tag">TypeScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="skill-card">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="bi bi-hdd-network text-cyber fs-3" aria-hidden="true"></i>
+                  <h3 class="h5 mb-0" data-key="skills.devops">Systems, Cloud &amp; AI Defense</h3>
+                </div>
+                <p class="small mb-3" data-key="skills.devopsDesc">
+                  Docker containerization, Linux (Kali, Ubuntu, WSL2), Google Cloud (Cloud Run), Git/GitHub, Google Gemini AI &amp; local LLMs (Ollama).
+                </p>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">Linux / WSL2</span>
+                  <span class="skill-tag">GCP Cloud Run</span>
+                  <span class="skill-tag">Gemini AI</span>
+                  <span class="skill-tag">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Tools & Projects -->
+      <section id="projects" class="py-5 dark-section">
+        <div class="container py-3">
+          <div class="section-head text-center mb-4">
+            <h2 class="section-title" data-key="projects.title">Security Tools &amp; Flagship Projects</h2>
+            <p class="section-subtitle" data-key="projects.subtitle">
+              Network auditors, AppSec trackers, hardened full-stack platforms, and defensive research.
+            </p>
+          </div>
+
+          <div class="filter-bar mb-5" role="tablist" aria-label="Filter security projects">
+            <button type="button" class="filter-btn active" role="tab" aria-selected="true" data-filter="all" data-key="filter.all">All</button>
+            <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="network" data-key="filter.network">Network &amp; Tools</button>
+            <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="appsec" data-key="filter.appsec">AppSec &amp; Web</button>
+            <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="python" data-key="filter.python">Python &amp; Research</button>
+          </div>
+
+          <div class="row g-4" id="projectsGrid">
+            <!-- 1. WiFi Harness -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="network">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/wifi-harness.jpg" alt="WiFi Harness AI Network Security Auditor" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">C# + Gemini AI</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">WiFi Harness — AI Network Auditor</h3>
+                  <p class="small flex-grow-1" data-key="projects.wifiharness">
+                    C# (.NET) Windows desktop auditor scanning /24 subnets via ARP &amp; ICMP, fingerprinting devices across 5 protocols (NetBIOS, mDNS, SSDP, HTTP, ARP), and integrating a Google Gemini AI Security Advisor.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">C# / .NET</span>
+                    <span class="skill-tag">ARP/ICMP</span>
+                    <span class="skill-tag">Gemini AI</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlhHersh/WiFi-Harness-Desktop-" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 2. Pwn-Tracker -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="appsec">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/cyber-sec.jpg" alt="Pwn-Tracker PortSwigger Web Security Academy Tracker" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge live">LIVE</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">Pwn-Tracker (274 PortSwigger Labs)</h3>
+                  <p class="small flex-grow-1" data-key="projects.pwntracker">
+                    Interactive web security study dashboard tracking progress across all 274 PortSwigger Web Security Academy labs — deployed live on both Vercel and Netlify.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">AppSec</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Vercel &amp; Netlify</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <a href="https://pwn-tracker.vercel.app/" target="_blank" rel="noopener noreferrer" class="cyber-btn flex-fill text-center">Live</a>
+                    <a href="https://github.com/Basem0AlHersh123/pwn-tracker" target="_blank" rel="noopener noreferrer" class="cyber-btn flex-fill text-center">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 3. Firewall CLI Tool -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="network python">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/firewall.jpg" alt="Malicious IP Firewall Blocker CLI" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">Defense CLI</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">Malicious IP Firewall CLI</h3>
+                  <p class="small flex-grow-1" data-key="projects.firewall">
+                    Automated command-line defensive utility that fetches and detects suspicious threat IPs and dynamically blocks them via Windows Firewall rules.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">PowerShell</span>
+                    <span class="skill-tag">Firewall</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlHersh123/Malicious-IPs-Blocking" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 4. Ransomware Mechanics Research -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="python">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/crypto.jpg" alt="Fernet Symmetric Encryption Defensive Research" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">Research</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">Fernet Ransomware Research</h3>
+                  <p class="small flex-grow-1" data-key="projects.ransomware">
+                    Python-based symmetric cryptography study demonstrating Fernet file encryption/decryption mechanics built strictly for defensive analysis and incident readiness.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Fernet Crypto</span>
+                    <span class="skill-tag">Blue Team</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlHersh123" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 5. IT3_BOT -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="appsec python">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/it3-bot.jpg" alt="IT3_BOT Secure Cohort Management System" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">FastAPI + Supabase</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">IT3_BOT — Cohort Platform</h3>
+                  <p class="small flex-grow-1" data-key="projects.it3bot">
+                    Open-source academic platform syncing a Telegram Bot and Web Mini App in real time with Supabase PostgreSQL and a FastAPI backend on Vercel.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Mini App</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlHersh123/IT3_BOT" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 6. UNIQUE Hardened Platform -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="appsec">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/unique.png" alt="UNIQUE Smart Learning Platform" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge live">LIVE</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">UNIQUE — Hardened Learning App</h3>
+                  <p class="small flex-grow-1" data-key="projects.unique">
+                    Production Next.js &amp; TypeScript student exam platform hardened with strict validation, protected flows, and responsive Arabic/English UX.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Hardened</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <a href="https://unique-tech-blond.vercel.app/" target="_blank" rel="noopener noreferrer" class="cyber-btn flex-fill text-center">Live</a>
+                    <a href="https://github.com/Basem0AlHersh123/Unique" target="_blank" rel="noopener noreferrer" class="cyber-btn flex-fill text-center">GitHub</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- 7. Enterprise School Management System -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="appsec">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/school-ms.jpg" alt="Enterprise School Management System" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">RBAC + Docker</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">School Management System (RBAC)</h3>
+                  <p class="small flex-grow-1" data-key="projects.schoolms">
+                    Multi-role institutional system built with Laravel, PostgreSQL, React, Flutter, and Docker — enforcing role-based access across admins, teachers, and students.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Docker</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlHersh123" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 8. ZenithBazaar & Hospital MS -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="python appsec">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/ai-sec.jpg" alt="ZenithBazaar Flask and AI Python Systems" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge">Python Suite</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">ZenithBazaar, Hospital MS &amp; AI Editor</h3>
+                  <p class="small flex-grow-1" data-key="projects.pythonsuite">
+                    Suite of Python applications including ZenithBazaar (Flask + Auth), role-based Hospital Management System (Tkinter/SQLite), CPU Scheduling Simulator, and AI Voice Text Editor.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">SQLite</span>
+                  </div>
+                  <a href="https://github.com/Basem0AlHersh123/ZenithBazaar" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="projects.viewGitHub">
+                    <i class="bi bi-github me-1" aria-hidden="true"></i>View on GitHub
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 9. Hospital Management System Direct -->
+            <div class="col-md-6 col-lg-4 project-item" data-category="network">
+              <article class="project-card h-100">
+                <div class="project-thumb-wrap">
+                  <img src="assets/images/cyber-sec.jpg" alt="Full-Stack Engineering Portfolio Link" width="900" height="560" loading="lazy" decoding="async" class="project-thumb" />
+                  <span class="project-badge live">50+ Repos</span>
+                </div>
+                <div class="p-4 d-flex flex-column flex-grow-1">
+                  <h3 class="h5 mb-2">Full-Stack &amp; Mobile Ecosystem</h3>
+                  <p class="small flex-grow-1" data-key="projects.fullstackdesc">
+                    Explore my full suite of 50+ web &amp; mobile projects (React Native, Flutter, Next.js, NestJS) on my dedicated Full-Stack portfolio hosted on Netlify.
+                  </p>
+                  <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">NestJS</span>
+                  </div>
+                  <a href="https://basem-alhersh-dev.netlify.app/" target="_blank" rel="noopener noreferrer" class="cyber-btn btn-sm-block" data-key="hero.fullstackLink">
+                    <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>Open Full-Stack Portfolio
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="py-5">
+        <div class="container py-3">
+          <div class="section-head text-center mb-5">
+            <h2 class="section-title" data-key="experience.title">Experience Timeline</h2>
+          </div>
+          <div class="timeline mx-auto" style="max-width: 780px">
+            <div class="timeline-item">
+              <h3 class="h5" data-key="experience.secdev">Security Researcher &amp; Full-Stack Engineer</h3>
+              <p class="text-cyber small mb-1" data-key="experience.secdevMeta">Nearly 4 Years (2023 – Present) • Independent &amp; Remote</p>
+              <p class="small mb-0" data-key="experience.secdevDesc">
+                Built and hardened 50+ applications, developed C# &amp; Python security tools (WiFi Harness, Firewall CLI), and conducted authorized web vulnerability testing with responsible CVE disclosure.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="h5" data-key="experience.engteacher">English Language Instructor (3 Years — Ongoing)</h3>
+              <p class="text-cyber small mb-1" data-key="experience.engteacherMeta">Family Medicine Center (Online), Technical Industrial Institute &amp; Egra School</p>
+              <p class="small mb-0" data-key="experience.engteacherDesc">
+                3 continuous years teaching technical and conversational English, demonstrating fluent international communication for global security &amp; engineering teams.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="h5" data-key="experience.tutor">Programming Teaching Assistant</h3>
+              <p class="text-cyber small mb-1" data-key="experience.tutorOrg">Sana'a University • 2024</p>
+              <p class="small mb-0" data-key="experience.tutorDesc">
+                Mentored IT students in C++ fundamentals, debugging, and secure coding principles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-5 dark-section">
+        <div class="container py-3">
+          <div class="section-head text-center mb-5">
+            <h2 class="section-title" data-key="contact.title">Establish Secure Contact</h2>
+          </div>
+          <div class="row g-4 justify-content-center" style="max-width: 960px; margin: 0 auto">
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <i class="bi bi-envelope-fill text-cyber fs-2 mb-3 d-block" aria-hidden="true"></i>
+                <h3 class="h6 mb-2" data-key="contact.email">Email</h3>
+                <a href="mailto:alhrshbasm4@gmail.com" class="text-light text-decoration-none small">alhrshbasm4@gmail.com</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <i class="bi bi-whatsapp text-cyber fs-2 mb-3 d-block" aria-hidden="true"></i>
+                <h3 class="h6 mb-2" data-key="contact.phone">Phone &amp; WhatsApp</h3>
+                <a href="https://wa.me/967773022084" target="_blank" rel="noopener noreferrer" dir="ltr" class="text-light text-decoration-none small d-block">+967 773 022 084</a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="glass-card p-4 text-center h-100">
+                <i class="bi bi-telegram text-cyber fs-2 mb-3 d-block" aria-hidden="true"></i>
+                <h3 class="h6 mb-2" data-key="contact.telegram">Telegram &amp; Channel</h3>
+                <p class="small mb-1">@Basem0AlHersh</p>
+                <a href="https://t.me/Cyber_Sentinel0" target="_blank" rel="noopener noreferrer" class="text-cyber text-decoration-none small">t.me/Cyber_Sentinel0</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <p class="mb-1 small">
+          &copy; 2026 <span data-key="footer.copyright">Basem Mohammed Ali Al-Hersh. All Rights Reserved.</span>
+        </p>
+        <p class="small mb-0 text-cyber" data-key="footer.tagline">
+          Cybersecurity &amp; AppSec Engineer | CompTIA Security+ | CCNA | Python &amp; C#
+        </p>
+      </div>
+    </footer>
+
+    <!-- Native <dialog> Cybersecurity CV Modal -->
+    <dialog id="cvDialog" closedby="any" aria-labelledby="cvDialogTitle" class="cyber-dialog">
+      <div class="p-4">
+        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+          <div>
+            <h1 id="cvDialogTitle" class="h4 mb-1" data-key="cv.title">Download Cybersecurity CV</h1>
+            <p class="small mb-0" data-key="cv.subtitle">Updated 2026 Security+ &amp; AppSec Edition (English &amp; Arabic PDF)</p>
+          </div>
+          <button type="button" id="closeCvBtn" class="btn-close btn-close-white" aria-label="Close"></button>
+        </div>
+
+        <div class="d-grid gap-3">
+          <div class="glass-card p-3" dir="ltr" lang="en">
+            <div class="fw-bold text-light mb-1">English Cybersecurity &amp; AppSec CV (PDF)</div>
+            <p class="small mb-3">Includes CompTIA Security+, CCNA, WiFi Harness (C# + AI), OWASP Hardening &amp; Responsible Disclosure.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="assets/cv/Basem_AlHersh_CyberSecurity_CV_EN.pdf" download="Basem_AlHersh_CyberSecurity_CV_EN.pdf" class="cyber-btn cyber-btn-primary">Download PDF (EN)</a>
+              <a href="assets/cv/Basem_AlHersh_CyberSecurity_CV_EN.pdf" target="_blank" rel="noopener noreferrer" class="cyber-btn">Preview</a>
+            </div>
+          </div>
+
+          <div class="glass-card p-3" dir="rtl" lang="ar">
+            <div class="fw-bold text-light mb-1">السيرة الذاتية للأمن السيبراني بالعربية (PDF)</div>
+            <p class="small mb-3">النسخة المحدثة 2026: Security+، CCNA، أداة WiFi Harness، تحصين المواقع والإبلاغ المسؤول عن الثغرات.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="assets/cv/Basem_AlHersh_CyberSecurity_CV_AR.pdf" download="Basem_AlHersh_CyberSecurity_CV_AR.pdf" class="cyber-btn cyber-btn-primary">تحميل PDF (عربي)</a>
+              <a href="assets/cv/Basem_AlHersh_CyberSecurity_CV_AR.pdf" target="_blank" rel="noopener noreferrer" class="cyber-btn">معاينة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="srcipt.js"></script>
+  </body>
+</html>
